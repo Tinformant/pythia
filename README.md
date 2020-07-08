@@ -36,3 +36,6 @@ Questions is doing bfs or dfs
 
 ### happen-before: system definition
 hierachy: span inside span; caller/callee refers to spans
+
+## Happens-Before Relationship
+
