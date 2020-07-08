@@ -32,7 +32,7 @@ Questions is doing bfs or dfs
 1. Hierarchy is top-down: First enabling lowest granularity and most general spans, and at each cycle enabling more and more granular spans to narrow down performance problems.
 
 ### Flat
-	1. Does not use hierarchy but only happen-before relationship
+1. Does not use hierarchy but only happen-before relationship
 
 ### happen-before: system definition
 hierachy: span inside span; caller/callee refers to spans
