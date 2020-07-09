@@ -22,15 +22,16 @@ Questions is doing bfs or dfs
 2. Nodes of the search space represent tracepoints/events
 3. Two types of edges: 1) happens-before relationship (may include hierarchical caller/callee relationship) 2) optional shortcuts (facilitate faster searching)
 
-### Using Search Space
-1. Match critical paths to search space
-
-### Span
+### Hierachy
 1. Semantically meaningful intervals
 2. Typically have caller/callee relationship between them
 3. Hierarchy between spans is stricly defined as happened before relationship 
 
-### Strategy
+
+### 4.2 Using Search Space
+1. Match critical paths to search space
+
+### 4.3 Strategy
 1. Hierarchy is top-down: First enabling lowest granularity and most general spans, and at each cycle enabling more and more granular spans to narrow down performance problems.
 
 ### Flat
