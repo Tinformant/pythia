@@ -8,6 +8,8 @@ Goal is to improve hierachy strategy, now flat has an advantage
 
 Questions is doing bfs or dfs
 
+## TODO
+4: "The search strategies are provided a problematic group, and the number of trace points to enable."
 
 ## Search Space
 * Search space is a data structure, provided during an offline profiling phase or learned by Pythia.
@@ -15,10 +17,10 @@ Questions is doing bfs or dfs
 
 
 ## Hierarchical Search
-### Search Space
+### 4.1 Search Space
 1. A collection of unique workflow paths
-2. Nodes represent tracepoints/events
-3. Two types of edges: 1) happens-before relationship (may include hierarchical caller/callee relationship) 2) shortcuts (facilitate faster searching)
+2. Nodes of the search space represent tracepoints/events
+3. Two types of edges: 1) happens-before relationship (may include hierarchical caller/callee relationship) 2) optional shortcuts (facilitate faster searching)
 
 ### Using Search Space
 1. Match critical paths to search space
