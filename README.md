@@ -33,7 +33,7 @@ Find_matches
 
 
 ### 4.2 Using Search Space
-1. Match critical paths to search space
+1. When the problem is localized to a group, critical paths are matched to search space
 
 ### 4.3 Strategy
 1. Hierarchy is top-down: First enabling lowest granularity and most general spans, and at each cycle enabling more and more granular spans to narrow down performance problems.
@@ -48,3 +48,6 @@ hierachy: span inside span; caller/callee refers to spans
 
 ## Documentation Location
 file:///Users/sir/Desktop/projects/target/doc/pythia/search/flat/index.html
+
+## Common Context
+
