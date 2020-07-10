@@ -10,6 +10,8 @@ Questions is doing bfs or dfs
 
 ## TODO
 4: "The search strategies are provided a problematic group, and the number of trace points to enable."
+common context? the figure?
+Find_matches
 
 ## Search Space
 * Search space is a data structure, provided during an offline profiling phase or learned by Pythia.
