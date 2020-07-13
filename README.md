@@ -1,5 +1,9 @@
 # pythia
 
+## Meeting
+1. Will Pythia become open source?
+2. 
+
 A new search stretagy: flat seach strategy for hierachy (with binary search mentioned by the paper)
 
 Make sure I understand the search strategies
