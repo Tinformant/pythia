@@ -12,6 +12,9 @@ Goal is to improve hierachy strategy, now flat has an advantage
 
 Questions is doing bfs or dfs
 
+## Quotes by Emre
+What I envisioned the new search strategy to be was: to follow what the hierarchical strategy is doing except when there are many candidate trace points in one level of the hierarchy, where we could split them like the flat search. According to what I saw, hierarchical search spends the most time on finding which tracepoint in a level is problematic and doesn't use the happens-before relationships like the flat search which would speed up this part of the search.
+
 ## TODO
 4: "The search strategies are provided a problematic group, and the number of trace points to enable."
 
