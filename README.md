@@ -26,7 +26,6 @@ Find_matches
 * Search space is a data structure, provided during an offline profiling phase or learned by Pythia.
 * A single distributed application can have multiple search spaces, each optimized for different search strategies.
 
-
 ## Hierarchical Search
 ### 4.1 Search Space
 1. A collection of unique workflow paths
@@ -38,9 +37,9 @@ Find_matches
 2. Typically have caller/callee relationship between them
 3. Hierarchy between spans is stricly defined as happened before relationship 
 
-
 ### 4.2 Using Search Space
-1. When the problem is localized to a group, critical paths are matched to search space
+1. At runtime, when the problem is localized to a group, critical paths are matched to search space to find the relevant path.
+2. To match a path to the search space, iterate the paths in the search space concurrently with the critical path. For any node in the critical path, we iterate the search space until an identical node is found.
 
 ### 4.3 Strategy
 1. Hierarchy is top-down: First enabling lowest granularity and most general spans, and at each cycle enabling more and more granular spans to narrow down performance problems.
