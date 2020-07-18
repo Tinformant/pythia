@@ -2,7 +2,7 @@
 
 ## Meeting
 1. Will Pythia become open source?
-2. 
+2. EventType?
 
 A new search stretagy: flat seach strategy for hierachy (with binary search mentioned by the paper)
 
