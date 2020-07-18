@@ -32,7 +32,7 @@ Find_matches
 2. Nodes of the search space represent tracepoints/events
 3. Two types of edges: 1) happens-before relationship (may include hierarchical caller/callee relationship) 2) optional shortcuts (facilitate faster searching)
 
-### Hierachy
+**Hierachy**
 1. Semantically meaningful intervals
 2. Typically have caller/callee relationship between them
 3. Hierarchy between spans is stricly defined as happened before relationship 
