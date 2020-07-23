@@ -1,8 +1,14 @@
-# pythia
+# Pythia
 
-## Meeting
-1. Will Pythia become open source?
-2. EventType?
+## Done
+1. Find where  is randomly searching
+2. Understand why hierarchical search needs the common context
+3. Implment hybrid search
+
+## TODO
+1. EventType?
+2. Hybrid search threshold and budget?
+3. Will Pythia become open source?
 
 A new search stretagy: flat seach strategy for hierachy (with binary search mentioned by the paper)
 
