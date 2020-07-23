@@ -6,7 +6,7 @@
 3. Implment hybrid search
 
 ## TODO
-1. Three EventTypes in getContext?
+1. Three EventTypes in get_context?
     * Returns every "Entry" trace point
     * Only returns "Annotation" trace point if it is also the node of interest
     * Does not return "Exit" trace point
