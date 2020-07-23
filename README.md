@@ -1,9 +1,9 @@
 # Pythia Hybrid Search
 
 ## Done
-1. Find where  is randomly searching
+1. Find where it is randomly searching
 2. Understand why hierarchical search needs the common context
-3. Implment hybrid search
+3. Implement hybrid search
 
 ## TODO
 1. Three EventTypes in get_context?
