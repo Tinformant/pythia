@@ -1,4 +1,4 @@
-# Pythia
+# Pythia Hybrid Search
 
 ## Done
 1. Find where  is randomly searching
