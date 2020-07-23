@@ -2,11 +2,14 @@
 
 ## Done
 1. Find where  is randomly searching
+             * Return every "Entry" trace point
+             * Only return "Annotation" trace point if it is also the node of interest
+             * Do not return "Exit" trace point
 2. Understand why hierarchical search needs the common context
 3. Implment hybrid search
 
 ## TODO
-1. EventType?
+1. Three EventTypes in getContext?
 2. Hybrid search threshold and budget?
 3. Will Pythia become open source?
 
