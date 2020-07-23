@@ -2,9 +2,9 @@
 
 ## Done
 1. Find where  is randomly searching
-             * Return every "Entry" trace point
-             * Only return "Annotation" trace point if it is also the node of interest
-             * Do not return "Exit" trace point
+    * Return every "Entry" trace point
+    * Only return "Annotation" trace point if it is also the node of interest
+    * Do not return "Exit" trace point
 2. Understand why hierarchical search needs the common context
 3. Implment hybrid search
 
