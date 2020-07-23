@@ -1,17 +1,15 @@
 # Pythia Hybrid Search
 
-## Done
-[x] Find where it is randomly searching
-[x] Understand why hierarchical search needs the common context
-[x] Implement hybrid search
-
 ## TODO
-1. Three EventTypes in get_context?
+- [x] Find where it is randomly searching
+- [x] Understand why hierarchical search needs the common context
+- [x] Implement hybrid search
+- [] Three EventTypes in get_context?
     * Returns every "Entry" trace point
     * Only returns "Annotation" trace point if it is also the node of interest
     * Does not return "Exit" trace point
-2. Hybrid search threshold and budget?
-3. Testing
+- [] Hybrid search threshold and budget?
+- [] Testing
 
 ## Quotes by Emre
 What I envisioned the new search strategy to be was: to follow what the hierarchical strategy is doing except when there are many candidate trace points in one level of the hierarchy, where we could split them like the flat search. According to what I saw, hierarchical search spends the most time on finding which tracepoint in a level is problematic and doesn't use the happens-before relationships like the flat search which would speed up this part of the search.
