@@ -10,23 +10,15 @@
 2. Hybrid search threshold and budget?
 3. Will Pythia become open source?
 
-A new search stretagy: flat seach strategy for hierachy (with binary search mentioned by the paper)
-
-Make sure I understand the search strategies
-
-Goal is to improve hierachy strategy, now flat has an advantage
-
-Questions is doing bfs or dfs
-
 ## Quotes by Emre
 What I envisioned the new search strategy to be was: to follow what the hierarchical strategy is doing except when there are many candidate trace points in one level of the hierarchy, where we could split them like the flat search. According to what I saw, hierarchical search spends the most time on finding which tracepoint in a level is problematic and doesn't use the happens-before relationships like the flat search which would speed up this part of the search.
 
-## TODO
+## On Hybrid Search
 4: "The search strategies are provided a problematic group, and the number of trace points to enable."
-
-common context? the figure?
-
-Find_matches
+* A new search stretagy: flat seach strategy for hierachy (with binary search mentioned by the paper)
+* Make sure I understand the search strategies
+* Goal is to improve hierachy strategy, now flat has an advantage
+* Questions is doing bfs or dfs
 
 ## Search Space
 * Search space is a data structure, provided during an offline profiling phase or learned by Pythia.
