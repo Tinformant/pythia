@@ -56,3 +56,11 @@ file:///Users/sir/Desktop/projects/target/doc/pythia/search/flat/index.html
 
 ## Common Context
 
+## Run Pythia
+1. Go to cloudlab.us
+2. Start an experiment with "tracing-Pythia".
+3. Parameters: The only parameters tested to work are # of compute nodes and disk image. For disk image, use tracing-pythia-PG0//base-with-repos for both node types (compute/controller).
+4. Select your cluster (I usually use Utah) and schedule creation/create immediately.
+5. Wait for ~1 hours until you get an email saying openstack is ready. Before this, the setup will be unusable.
+
+
