@@ -43,8 +43,8 @@ What I envisioned the new search strategy to be was: to follow what the hierarch
 ### 4.3 Strategy
 1. Hierarchy is top-down: First enabling lowest granularity and most general spans, and at each cycle enabling more and more granular spans to narrow down performance problems.
 
-### Flat
-1. Does not use hierarchy but only happen-before relationship
+### 4.4 Flat
+1. Does not rely on the hierarchy, and instead only uses the happens before relationships to find which trace points to enable
 
 ### happen-before: system definition
 hierachy: span inside span; caller/callee refers to spans
