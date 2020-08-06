@@ -3,7 +3,8 @@
 ### 08/13
 - [ ] Testing with real data
 ### 08/06
-- [ ] How is flat search adhering to the budget and would it be possible to replicate that in hierarchical search?  Would what the algorithm be and what are the drawbacks?  
+- [X] Rewriting split by n
+- [X] How is flat search adhering to the budget and would it be possible to replicate that in hierarchical search?  Would what the algorithm be and what are the drawbacks?  
 - [ ] Technically, traces are comprised of “spans” (pairs of trace points labeled with _ENTRY and _EXIT) and annotations (just a single trace point denoting an important event). For the former, do the search strategies always turn on trace points in pairs?  
 ### Done
 - [x] Find where it is randomly searching in hierarchical search
