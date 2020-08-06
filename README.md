@@ -6,16 +6,15 @@
 ### 08/06
 - [X] Rewriting split by n
 - [X] How is flat search adhering to the budget and would it be possible to replicate that in hierarchical search?  Would what the algorithm be and what are the drawbacks?  
-- Budget is a input parameter in the interface so it is used in both cases. In flat search, it is used for dividing an edge into budget number of subedges. In hierarchical search, it is used in randomly selecting children spans.
+   - Budget is a input parameter in the interface so it is used in both cases. In flat search, it is used for dividing an edge into budget number of subedges. In hierarchical search, it is used in randomly selecting children spans.
 - [ ] Technically, traces are comprised of “spans” (pairs of trace points labeled with _ENTRY and _EXIT) and annotations (just a single trace point denoting an important event). For the former, do the search strategies always turn on trace points in pairs?  
+    * Returns every "Entry" trace point
+    * Only returns "Annotation" trace point if it is also the node of interest
+    * Does not return "Exit" trace point
 ### Done
 - [x] Find where it is randomly searching in hierarchical search
 - [x] Understand why hierarchical search needs the common context
 - [x] Implement hybrid search
-- [x] Three EventTypes in get_context?
-    * Returns every "Entry" trace point
-    * Only returns "Annotation" trace point if it is also the node of interest
-    * Does not return "Exit" trace point
 - [x] Hybrid search threshold and budget?
 
 
