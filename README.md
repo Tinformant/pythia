@@ -1,19 +1,22 @@
 # Pythia Hybrid Search
 
-## 08/07 Meeting
+## Milestones
+## Milestones
+### 08/13
+- [ ] Testing with real data
+### 08/06
 - [ ] How is flat search adhering to the budget and would it be possible to replicate that in hierarchical search?  Would what the algorithm be and what are the drawbacks?  
 - [ ] Technically, traces are comprised of “spans” (pairs of trace points labeled with _ENTRY and _EXIT) and annotations (just a single trace point denoting an important event). For the former, do the search strategies always turn on trace points in pairs?  
-
-## TODO
-- [x] Find where it is randomly searching
+### Done
+- [x] Find where it is randomly searching in hierarchical search
 - [x] Understand why hierarchical search needs the common context
 - [x] Implement hybrid search
-- [ ] Three EventTypes in get_context?
+- [x] Three EventTypes in get_context?
     * Returns every "Entry" trace point
     * Only returns "Annotation" trace point if it is also the node of interest
     * Does not return "Exit" trace point
-- [ ] Hybrid search threshold and budget?
-- [ ] Testing
+- [x] Hybrid search threshold and budget?
+
 
 ## Quotes by Emre
 What I envisioned the new search strategy to be was: to follow what the hierarchical strategy is doing except when there are many candidate trace points in one level of the hierarchy, where we could split them like the flat search. According to what I saw, hierarchical search spends the most time on finding which tracepoint in a level is problematic and doesn't use the happens-before relationships like the flat search which would speed up this part of the search.
