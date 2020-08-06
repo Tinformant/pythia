@@ -3,6 +3,8 @@
 ### 08/13
 - [ ] Modifying SearchStrategy so that HybridSearch can take in both budget and threshold
 - [ ] Testing with real data
+- [ ] Figure out about if hierarchical search is level-order or not
+- [ ] Use testing framework to generate testing
 ### 08/06
 - [X] Rewriting split by n
 - [X] How is flat search adhering to the budget and would it be possible to replicate that in hierarchical search?  Would what the algorithm be and what are the drawbacks?  
