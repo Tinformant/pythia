@@ -1,6 +1,4 @@
 # Pythia Hybrid Search
-
-## Milestones
 ## Milestones
 ### 08/13
 - [ ] Testing with real data
