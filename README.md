@@ -6,10 +6,10 @@
 - [ ] Figure out about if hierarchical search is level-order or not
 - [ ] Use testing framework to generate testing
 - [ ] Presentation
-      * What's the problem trying to solve
-      * how does hierarchical/flat search work
-      * How did I change the code
-      * Present a problem as an example
+     * What's the problem trying to solve
+     * how does hierarchical/flat search work
+     * How did I change the code
+     * Present a problem as an example
 ### 08/06
 - [X] Rewriting split by n
 - [X] How is flat search adhering to the budget and would it be possible to replicate that in hierarchical search?  Would what the algorithm be and what are the drawbacks?  
