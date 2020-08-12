@@ -78,7 +78,10 @@ file:///Users/sir/Desktop/projects/target/doc/pythia/search/flat/index.html
 2. Start an experiment with "tracing-Pythia".
 3. Parameters: The only parameters tested to work are # of compute nodes and disk image. For disk image, use tracing-pythia-PG0//base-with-repos for both node types (compute/controller).
 4. Select your cluster (I usually use Utah) and schedule creation/create immediately.
-5. Wait for ~1 hours until you get an email saying openstack is ready. Before this, the setup will be unusable.
+    * Sometimes, setup may randomly fail. Trying a couple more times will usually work.
+5. Wait for 2 emails until setup is complete.
+    * Expect first email saying "OpenStack Instance Setting Up" right after cluster creation
+    * Second email will arive about 1.5 hour later saying "OpenStack Instance Finished Setting Up"
 6. Follow the instructions here: file:///Users/sir/Desktop/projects/target/doc/pythia/index.html
 
 
