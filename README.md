@@ -25,7 +25,6 @@
 - [x] Implement hybrid search
 - [x] Hybrid search threshold and budget?
 
-
 ## Quotes by Emre
 What I envisioned the new search strategy to be was: to follow what the hierarchical strategy is doing except when there are many candidate trace points in one level of the hierarchy, where we could split them like the flat search. According to what I saw, hierarchical search spends the most time on finding which tracepoint in a level is problematic and doesn't use the happens-before relationships like the flat search which would speed up this part of the search.
 
@@ -74,11 +73,12 @@ file:///Users/sir/Desktop/projects/target/doc/pythia/search/flat/index.html
 
 ## Common Context
 
-## Run Pythia
+## Running Pythia
 1. Go to cloudlab.us
 2. Start an experiment with "tracing-Pythia".
 3. Parameters: The only parameters tested to work are # of compute nodes and disk image. For disk image, use tracing-pythia-PG0//base-with-repos for both node types (compute/controller).
 4. Select your cluster (I usually use Utah) and schedule creation/create immediately.
 5. Wait for ~1 hours until you get an email saying openstack is ready. Before this, the setup will be unusable.
+6. Follow the instructions here: file:///Users/sir/Desktop/projects/target/doc/pythia/index.html
 
 
