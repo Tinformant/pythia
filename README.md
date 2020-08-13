@@ -88,3 +88,5 @@ file:///Users/sir/Desktop/projects/target/doc/pythia/search/flat/index.html
     * Change pythia_clients
     * Change uber_trace_dir 
 9. At /local/reconstruction/, run command: cargo run manifest /users/emreates/offline_traces.txt
+10. At ~/reconstruction, run command: RUST_BACKTRACE=1 cargo run --bin pythia_controller ~/pythia.log 2>&1 | tee ~/pythia_verbose.log 
+    * This will start pythia; if something goes, we will get back trace
