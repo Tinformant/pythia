@@ -2,8 +2,8 @@
 ## Milestones
 ### 08/20
 - [ ] Presentation
-     [X] What's the problem trying to solve
-     [X] how does hierarchical/flat search work
+     - [X] What's the problem trying to solve
+     - [X] how does hierarchical/flat search work
      * How did I change the code
      * Present a problem as an example
 ### 08/13
