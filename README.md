@@ -1,12 +1,13 @@
 # Pythia Hybrid Search
 ## Milestones
+### 08/20
 ### 08/13
-- [ ] Modifying SearchStrategy so that HybridSearch can take in both budget and threshold
+- [X] Modifying SearchStrategy so that HybridSearch can take in both budget and threshold
 - [X] Figure out about if hierarchical search is level-order or not
     * NO
 - [ ] Use testing framework to generate testing
 - [ ] Testing with real data
-- [ ] Presentation
+- [X] Presentation
      * What's the problem trying to solve
      * how does hierarchical/flat search work
      * How did I change the code
