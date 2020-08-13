@@ -2,9 +2,10 @@
 ## Milestones
 ### 08/13
 - [ ] Modifying SearchStrategy so that HybridSearch can take in both budget and threshold
-- [ ] Testing with real data
-- [ ] Figure out about if hierarchical search is level-order or not
+- [X] Figure out about if hierarchical search is level-order or not
+    * NO
 - [ ] Use testing framework to generate testing
+- [ ] Testing with real data
 - [ ] Presentation
      * What's the problem trying to solve
      * how does hierarchical/flat search work
