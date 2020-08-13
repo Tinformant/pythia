@@ -87,4 +87,4 @@ file:///Users/sir/Desktop/projects/target/doc/pythia/search/flat/index.html
 7. Configuration file is /etc/pythia/controller.toml
     * Change pythia_clients
     * Change uber_trace_dir 
-9. C
+9. At /local/reconstruction/, run command: cargo run manifest /users/emreates/offline_traces.txt
