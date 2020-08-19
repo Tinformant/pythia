@@ -87,7 +87,7 @@ file:///Users/sir/Desktop/projects/target/doc/pythia/search/flat/index.html
 4. Wait for 2 emails until setup is complete.
     * Expect first email saying "OpenStack Instance Setting Up" right after cluster creation
     * Second email will arive about 1.5 hour later saying "OpenStack Instance Finished Setting Up"
-5. Follow the instructions here: file:///Users/sir/Desktop/projects/target/doc/pythia/index.html
+5. Follow the instructions here: ```file:///Users/sir/Desktop/projects/target/doc/pythia/index.html```
 6. When running offline profiling, may have to change to Emre's user to load the correct bashrc, so run "sudo su emreates" before running offline profiling.
 7. Change num_iters in offline_profiling.sh
 8. Configuration file is /etc/pythia/controller.toml
