@@ -79,18 +79,17 @@ file:///Users/sir/Desktop/projects/target/doc/pythia/search/flat/index.html
 ## Common Context
 
 ## Running Pythia
-1. Go to cloudlab.us
-2. Start an experiment with "tracing-Pythia".
-3. Parameters: The only parameters tested to work are # of compute nodes and disk image. For disk image, use tracing-pythia-PG0//base-with-repos for both node types (compute/controller).
-4. Select your cluster (I usually use Utah) and schedule creation/create immediately.
+1. At cloudlab.us, start an experiment with "tracing-Pythia".
+2. For experiment setup, the only parameters tested to work are # of compute nodes and disk image. For disk image, use tracing-pythia-PG0//base-with-repos for both node types (compute/controller). Leave all other fields as default values.
+3. Select your cluster (I usually use Utah) and schedule creation/create immediately.
     * Sometimes, setup may randomly fail. Trying a couple more times will usually work.
-5. Wait for 2 emails until setup is complete.
+4. Wait for 2 emails until setup is complete.
     * Expect first email saying "OpenStack Instance Setting Up" right after cluster creation
     * Second email will arive about 1.5 hour later saying "OpenStack Instance Finished Setting Up"
-6. Follow the instructions here: file:///Users/sir/Desktop/projects/target/doc/pythia/index.html
-7. When running offline profiling, may have to change to Emre's user to load the correct bashrc, so run "sudo su emreates" before running offline profiling.
+5. Follow the instructions here: file:///Users/sir/Desktop/projects/target/doc/pythia/index.html
+6. When running offline profiling, may have to change to Emre's user to load the correct bashrc, so run "sudo su emreates" before running offline profiling.
 7. Change num_iters in offline_profiling.sh
-7. Configuration file is /etc/pythia/controller.toml
+8. Configuration file is /etc/pythia/controller.toml
     * Change pythia_clients
     * Change uber_trace_dir 
 9. At /local/reconstruction/, run command: cargo run manifest /users/emreates/offline_traces.txt
