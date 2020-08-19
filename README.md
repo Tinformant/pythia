@@ -91,8 +91,8 @@ file:///Users/sir/Desktop/projects/target/doc/pythia/search/flat/index.html
 6. When running offline profiling, may have to change to Emre's user to load the correct bashrc, so run ```sudo su emreates``` before running offline profiling.
 7. Change ```num_iters``` in offline_profiling.sh
 8. Configuration file is /etc/pythia/controller.toml
-    * Change ```pythia_clients```
-    * Change ```uber_trace_dir```
+    * Change ```pythia_clients``` according to the actual number of nodes
+    * Change ```uber_trace_dir``` to where the uber trace is
 9. At /local/reconstruction/, run command: ```cargo run manifest /users/emreates/offline_traces.txt```
 10. At ~/reconstruction, run command: ```RUST_BACKTRACE=1 cargo run --bin pythia_controller ~/pythia.log 2>&1 | tee ~/pythia_verbose.log```
     * This will start pythia; if something goes, we will get back trace
