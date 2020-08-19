@@ -88,12 +88,12 @@ file:///Users/sir/Desktop/projects/target/doc/pythia/search/flat/index.html
     * Expect first email saying "OpenStack Instance Setting Up" right after cluster creation
     * Second email will arive about 1.5 hour later saying "OpenStack Instance Finished Setting Up"
 5. Follow the instructions here: ```file:///Users/sir/Desktop/projects/target/doc/pythia/index.html```
-6. When running offline profiling, may have to change to Emre's user to load the correct bashrc, so run "sudo su emreates" before running offline profiling.
-7. Change num_iters in offline_profiling.sh
+6. When running offline profiling, may have to change to Emre's user to load the correct bashrc, so run ```sudo su emreates``` before running offline profiling.
+7. Change ```num_iters``` in offline_profiling.sh
 8. Configuration file is /etc/pythia/controller.toml
-    * Change pythia_clients
-    * Change uber_trace_dir 
-9. At /local/reconstruction/, run command: cargo run manifest /users/emreates/offline_traces.txt
-10. At ~/reconstruction, run command: RUST_BACKTRACE=1 cargo run --bin pythia_controller ~/pythia.log 2>&1 | tee ~/pythia_verbose.log 
+    * Change ```pythia_clients```
+    * Change ```uber_trace_dir```
+9. At /local/reconstruction/, run command: ```cargo run manifest /users/emreates/offline_traces.txt```
+10. At ~/reconstruction, run command: ```RUST_BACKTRACE=1 cargo run --bin pythia_controller ~/pythia.log 2>&1 | tee ~/pythia_verbose.log```
     * This will start pythia; if something goes, we will get back trace
 11. traces: /home/ates/tracing/traces
