@@ -8,6 +8,7 @@
      - [X] What the problem is with the hierarchical search strategy.  
           * Come up with an example that illustrates this problem?
      - [ ] Your solution and modifications / along with a demo.
+     - [ ] Create a toy search space (have to manually add spans)
 ### 08/13
 - [X] Modifying SearchStrategy so that HybridSearch can take in both budget and threshold
 - [X] Figure out about if hierarchical search is level-order or not
