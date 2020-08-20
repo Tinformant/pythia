@@ -88,7 +88,7 @@ file:///Users/sir/Desktop/projects/target/doc/pythia/search/flat/index.html
     * Expect first email saying "OpenStack Instance Setting Up" right after cluster creation
     * Second email will arive about 1.5 hour later saying "OpenStack Instance Finished Setting Up"
 ### Creating Search Space
-1. Run some workload with all the instrumentation enabled. For OpenStack, this workload is in the script /local/tracing-pythia/workloads/offline_profiling.sh. You probably need to manually pull the latest version of the code to get the script.
+1. Run some workload with all the instrumentation enabled. For OpenStack, this workload is in the script ```/local/tracing-pythia/workloads/offline_profiling.sh``` You probably need to manually pull the latest version of the code to get the script.
 2. This script generates a list of trace_ids in the file ~/offline_profiling.sh.
 3. Use cargo run manifest <path/to/trace/ids> to generate the manifest. It is stored in /opt/stack/manifest.json.
 
@@ -99,7 +99,7 @@ file:///Users/sir/Desktop/projects/target/doc/pythia/search/flat/index.html
     * Change ```pythia_clients``` according to the actual number of nodes
     * Change ```uber_trace_dir``` to where the uber trace is
 9. At ```/local/reconstruction/```, run command: ```cargo run manifest /users/emreates/offline_traces.txt```
-10. At ```~/reconstruction```, run command: ```RUST_BACKTRACE=1 cargo run --bin pythia_controller ~/pythia.log 2>&1 | tee ~/pythia_verbose.log```
+10. At ```~/reconstruction``` (~ tilda is just home directory), run command: ```RUST_BACKTRACE=1 cargo run --bin pythia_controller ~/pythia.log 2>&1 | tee ~/pythia_verbose.log```
     * This will start pythia; if something goes, we will get back trace
 11. traces: /home/ates/tracing/traces
 
