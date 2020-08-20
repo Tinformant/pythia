@@ -1,5 +1,13 @@
 # Pythia Hybrid Search
 ## Milestones
+### 08/27
+- [ ] Presentation
+     - [X] The high-level problem search strategies intend to solve
+     - [ ] How the hierarchical search strategy and flat search strategy work.
+          * Pictures or animations
+     - [X] What the problem is with the hierarchical search strategy.  
+          * Come up with an example that illustrates this problem?
+     - [ ] Your solution and modifications / along with a demo.
 ### 08/20
 - [ ] Presentation
      - [X] What's the problem trying to solve
