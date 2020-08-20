@@ -78,7 +78,7 @@ file:///Users/sir/Desktop/projects/target/doc/pythia/search/flat/index.html
 
 ## Common Context
 
-## Running Pythia
+## Running Pythia on Cloudlab
 ### Setup Pythia on Cloudlab
 1. At cloudlab.us, start an experiment with "tracing-Pythia".
 2. For experiment setup, the only parameters tested to work are # of compute nodes and disk image. For disk image, use 
@@ -102,7 +102,7 @@ file:///Users/sir/Desktop/projects/target/doc/pythia/search/flat/index.html
 4. Follow the instructions here: ```file:///Users/sir/Desktop/projects/target/doc/pythia/index.html```
 ### Running Pythia
 1. At ```/local/reconstruction/```, run command: ```cargo run manifest /users/emreates/offline_traces.txt```
-2. At ```~/reconstruction``` (~ tilda is just home directory), run command: ```RUST_BACKTRACE=1 cargo run --bin pythia_controller ~/pythia.log 2>&1 | tee ~/pythia_verbose.log```
+2. At ```~/reconstruction``` (~ tilda just means home directory), run command: ```RUST_BACKTRACE=1 cargo run --bin pythia_controller ~/pythia.log 2>&1 | tee ~/pythia_verbose.log```
     * This will start pythia; if something goes, we will get back trace
 3. traces: /home/ates/tracing/traces
 
