@@ -88,7 +88,8 @@ file:///Users/sir/Desktop/projects/target/doc/pythia/search/flat/index.html
     * Expect first email saying "OpenStack Instance Setting Up" right after cluster creation
     * Second email will arive about 1.5 hour later saying "OpenStack Instance Finished Setting Up"
 ### Creating Search Space
-1. Run some workload with all the instrumentation enabled. For OpenStack, this workload is in the script ```/local/tracing-pythia/workloads/offline_profiling.sh``` You probably need to manually pull the latest version of the code to get the script.
+**Manifest is synonym for search space.**
+1. Running some workload with all the instrumentation enabled: for OpenStack, this workload is in the script ```/local/tracing-pythia/workloads/offline_profiling.sh``` May need to manually pull the latest version of the code to get the script.
 2. This script generates a list of trace_ids in the file ~/offline_profiling.sh.
 3. Use cargo run manifest <path/to/trace/ids> to generate the manifest. It is stored in /opt/stack/manifest.json.
 
