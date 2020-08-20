@@ -69,6 +69,52 @@ What I envisioned the new search strategy to be was: to follow what the hierarch
 2. Matches the problem groups to the search space and finds the closet matching critical paths.
 3. Enables trace points that divide the most problematic edge equally, based on the budget.
 
+### Pseudo Code
+```rust
+fn search(&self, group: &Group, edge: EdgeIndex, budget: usize) -> Vec<TracepointID> {
+   let mut rng = &mut rand::thread_rng();
+   // Get source and target nodes of the problematic edge
+   let (source, target) = group.g.edge_endpoints(edge).unwrap();
+
+   let source_context = HierarchicalSearch::get_context(group, source);
+   let target_context = HierarchicalSearch::get_context(group, target);
+
+   // Find common context (common calling context)
+   let mut common_context = Vec::new();
+   let mut idx = 0;
+   loop {
+       if idx >= source_context.len() || idx >= target_context.len() {
+           break;
+       } else if source_context[idx] == target_context[idx] {
+           common_context.push(source_context[idx]);
+           idx += 1;
+       } else {
+           break;
+       }
+   }
+   println!("Common context for the search: {:?}", common_context);
+   // Match the problem group to the search space and finds the closest matching critical paths
+   let matches = self.manifest.find_matches(group);
+
+   // matches are the closest matching critical paths to the group
+   let mut result = self.search_context(&matches, common_context);
+
+   /* into_iter() creates a consuming iterator, that is, one that moves each value out of
+   *  the vector (from start to end). The vector cannot be used after calling this
+   *  filter() filters the elements of iter with predicate.
+   *  collect() turns an iterator into a collection
+   */
+   result = result
+       .into_iter()
+       .filter(|&x| !self.controller.is_enabled(&(x, Some(group.request_type))))
+       .collect();
+   /* choose_multiple: produces an iterator that chooses amount elements from the slice at random
+    * without repeating any, and returns them in random order.
+    */
+   result = result.choose_multiple(&mut rng, budget).cloned().collect();
+   result
+}
+```
 
 ### happen-before: system definition
 hierachy: span inside span; caller/callee refers to spans
