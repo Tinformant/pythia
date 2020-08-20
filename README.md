@@ -79,6 +79,7 @@ file:///Users/sir/Desktop/projects/target/doc/pythia/search/flat/index.html
 ## Common Context
 
 ## Running Pythia
+### Setup Pythia on Cloudlab
 1. At cloudlab.us, start an experiment with "tracing-Pythia".
 2. For experiment setup, the only parameters tested to work are # of compute nodes and disk image. For disk image, use 
 ```tracing-pythia-PG0//base-with-repos``` for both node types (compute/controller). Leave all other fields as default values.
@@ -87,6 +88,10 @@ file:///Users/sir/Desktop/projects/target/doc/pythia/search/flat/index.html
 4. Wait for 2 emails until setup is complete.
     * Expect first email saying "OpenStack Instance Setting Up" right after cluster creation
     * Second email will arive about 1.5 hour later saying "OpenStack Instance Finished Setting Up"
+### Update Configuration Files
+1. Configuration file is /etc/pythia/controller.toml
+    * Change ```pythia_clients``` according to the actual number of nodes
+    * Change ```uber_trace_dir``` to where the uber trace is
 ### Creating Search Space
 **Manifest is synonym for search space.**
 1. May have to change to Emre's user to load the correct bashrc before running offline profiling, so run ```sudo su emreates``` 
@@ -95,9 +100,7 @@ file:///Users/sir/Desktop/projects/target/doc/pythia/search/flat/index.html
 3. Use cargo run manifest <path/to/trace/ids> to generate the manifest. It is stored in /opt/stack/manifest.json.
 5. Follow the instructions here: ```file:///Users/sir/Desktop/projects/target/doc/pythia/index.html```
 7. Change ```num_iters``` in offline_profiling.sh
-8. Configuration file is /etc/pythia/controller.toml
-    * Change ```pythia_clients``` according to the actual number of nodes
-    * Change ```uber_trace_dir``` to where the uber trace is
+
 9. At ```/local/reconstruction/```, run command: ```cargo run manifest /users/emreates/offline_traces.txt```
 10. At ```~/reconstruction``` (~ tilda is just home directory), run command: ```RUST_BACKTRACE=1 cargo run --bin pythia_controller ~/pythia.log 2>&1 | tee ~/pythia_verbose.log```
     * This will start pythia; if something goes, we will get back trace
