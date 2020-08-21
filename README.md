@@ -208,7 +208,7 @@ file:///Users/sir/Desktop/projects/target/doc/pythia/search/flat/index.html
     * Expect first email saying "OpenStack Instance Setting Up" right after cluster creation
     * Second email will arive about 1.5 hour later saying "OpenStack Instance Finished Setting Up"
 ### Update Configuration Files
-1. Configuration file is /etc/pythia/controller.toml
+1. Configuration file is ```/etc/pythia/controller.toml```
     * Change ```pythia_clients``` according to the actual number of nodes
     * Change ```uber_trace_dir``` to where the uber trace is
 ### Creating Search Space
