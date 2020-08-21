@@ -71,11 +71,43 @@ What I envisioned the new search strategy to be was: to follow what the hierarch
 
 ### Pseudo Code
 ```
-fn search (problem_group, problem_edge, budget) -> Vec<TracepointID> {
+fn hierarchical_search (problem_group, problem_edge, budget) -> Vec<TracepointID> {
+    // Get source and target nodes of the problematic edge
     let (source, target) = problem_group.g.edge_endpoints(edge);
+    // Get calling context of source and target
     let source_context = get_context(problem_group, source);
     let target_context = get_context(problem_group, target);
+    
+    // Find common context (common calling context)
+    let mut common_context = Vec::new();
+    let mut idx = 0;
+    loop {
+        if idx >= source_context.len() || idx >= target_context.len() {
+           break;
+        } else if source_context[idx] == target_context[idx] {
+           common_context.push(source_context[idx]);
+           idx += 1;
+        } else {
+           break;
+        }
+    }
+   println!("Common context for the search: {:?}", common_context);
+   // Match the problem group to the search space and finds the closest matching critical paths
+   let matches = self.manifest.find_matches(group);
 
+   // matches are the closest matching critical paths to the group
+   let mut result = self.search_context(&matches, common_context);
+
+   result = result
+       .into_iter()
+       .filter(|&x| !self.controller.is_enabled(&(x, Some(group.request_type))))
+       .collect();
+   /* Chooses budget amount elements from the slice at random
+    * without repeating any, and returns them in random order.
+    */
+   let mut rng = &mut rand::thread_rng();
+   result = result.choose_multiple(&mut rng, budget).cloned().collect();
+   result
 }
 ```
 ```rust
@@ -123,6 +155,7 @@ fn search(&self, group: &Group, edge: EdgeIndex, budget: usize) -> Vec<Tracepoin
    result
 }
 ```
+
 
 ### happen-before: system definition
 hierachy: span inside span; caller/callee refers to spans
