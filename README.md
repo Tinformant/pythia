@@ -70,6 +70,14 @@ What I envisioned the new search strategy to be was: to follow what the hierarch
 3. Enables trace points that divide the most problematic edge equally, based on the budget.
 
 ### Pseudo Code
+```
+fn search (problem_group, problem_edge, budget) -> Vec<TracepointID> {
+    let (source, target) = problem_group.g.edge_endpoints(edge);
+    let source_context = get_context(problem_group, source);
+    let target_context = get_context(problem_group, target);
+
+}
+```
 ```rust
 fn search(&self, group: &Group, edge: EdgeIndex, budget: usize) -> Vec<TracepointID> {
    let mut rng = &mut rand::thread_rng();
@@ -150,8 +158,8 @@ file:///Users/sir/Desktop/projects/target/doc/pythia/search/flat/index.html
 1. At ```/local/reconstruction/```, run command: ```cargo run manifest /users/emreates/offline_traces.txt```
 4. Follow the instructions here: ```file:///Users/sir/Desktop/projects/target/doc/pythia/index.html```
 ### Running Pythia
-2. At ```~/reconstruction``` (~ tilda just means home directory), run command: ```RUST_BACKTRACE=1 cargo run --bin pythia_controller ~/pythia.log 2>&1 | tee ~/pythia_verbose.log```
+1. At ```~/reconstruction``` (~ tilda just means home directory), run command: ```RUST_BACKTRACE=1 cargo run --bin pythia_controller ~/pythia.log 2>&1 | tee ~/pythia_verbose.log```
     * This will start pythia; if something goes, we will get back trace
-3. traces: /home/ates/tracing/traces
+2. traces: /home/ates/tracing/traces
 
 
