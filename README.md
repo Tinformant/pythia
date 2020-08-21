@@ -155,7 +155,37 @@ fn search(&self, group: &Group, edge: EdgeIndex, budget: usize) -> Vec<Tracepoin
    result
 }
 ```
+### Flat Search Pseudo Code
+```rust
+fn search(&self, group: &Group, edge: EdgeIndex, budget: usize) -> Vec<TracepointID> {
 
+}
+```
+
+**Original**
+```rust
+fn search(&self, group: &Group, edge: EdgeIndex, budget: usize) -> Vec<TracepointID> {
+   let matches = self.manifest.find_matches(group);
+   let mut result = HashSet::new();
+   for m in matches {
+       let now = Instant::now();
+       // Each is cost 1
+       let remaining_budget = budget - result.len();
+       // take() makes the iterator finite
+       result.extend(
+           self.split_group_by_n(m, group, edge, remaining_budget)
+               .iter()
+               .take(remaining_budget),
+       );
+       eprintln!("Finding middle took {}", now.elapsed().as_micros(),);
+       result = result
+           .into_iter()
+           .filter(|&x| !self.controller.is_enabled(&(x, Some(group.request_type))))
+           .collect();
+   }
+   result.drain().collect()
+}
+```
 
 ### happen-before: system definition
 hierachy: span inside span; caller/callee refers to spans
