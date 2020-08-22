@@ -17,7 +17,7 @@ do
             # $! contains the process ID of the most recently executed background pipeline.
             pids+=($!)
     done
-                                                                                                                                         
+    # pids[@] treats pids like an array and iterates through all its elements                                                                                                                                    
     for pid in ${pids[@]}
     do
         wait $pid
