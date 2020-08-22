@@ -14,6 +14,7 @@ do
     for i in `seq $NUM_ITERS`
     do
             /local/tracing-pythia/workloads/create_delete_${resource}.sh ~/offline_traces.txt 1 &
+            # $! contains the process ID of the most recently executed background pipeline.
             pids+=($!)
     done
                                                                                                                                          
