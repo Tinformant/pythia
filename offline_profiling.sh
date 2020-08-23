@@ -25,7 +25,8 @@ do
 done
                                                                                                                                          
 sleep 300
-                                                                                                                                         
+   # read - Read a line from the standard input and split it into fields.
+   # -r		do not allow backslashes to escape any characters                                                                                                                               
 while read -r line
 
 do
