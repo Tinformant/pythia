@@ -165,6 +165,51 @@ fn search(&self, group: &Group, edge: EdgeIndex, budget: usize) -> Vec<Tracepoin
 
 **Original**
 ```rust
+/// Match the problem group to the search space and finds the closest matching critical paths
+///
+/// # Arguments
+///
+/// * `group` - a group of critical paths
+///
+pub fn find_matches<'a>(&'a self, group: &Group) -> Vec<&'a HierarchicalCriticalPath> {
+    // Get the current time
+    let now = Instant::now();
+    // If request type is not the list
+    let matches = if group.request_type == RequestType::Unknown {
+        let mut result = Vec::new();
+        for ss in self.per_request_type.values() {
+            result.extend(ss.find_matches(group, false).iter());
+        }
+        result
+    } else {
+        // If request type is in the list
+        match self.per_request_type.get(&group.request_type) {
+            Some(ss) => ss.find_matches(group, false),
+            None => {
+                panic!(
+                    "Request type {:?} not present in manifest",
+                    group.request_type
+                );
+            }
+        }
+    };
+    eprintln!(
+        "Finding {} matching groups took {}, group size {}",
+        matches.len(),
+        now.elapsed().as_micros(),
+        group.g.node_count()
+    );
+    if matches.len() == 0 {
+        println!(
+            "No critical path matches the group {}:\n{}",
+            group,
+            group.dot()
+        );
+    }
+    matches
+}
+```
+```rust
 fn search(&self, group: &Group, edge: EdgeIndex, budget: usize) -> Vec<TracepointID> {
    let matches = self.manifest.find_matches(group);
    let mut result = HashSet::new();
