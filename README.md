@@ -158,7 +158,8 @@ fn search(&self, group: &Group, edge: EdgeIndex, budget: usize) -> Vec<Tracepoin
 ### Flat Search Pseudo Code
 ```rust
 fn search(&self, group: &Group, edge: EdgeIndex, budget: usize) -> Vec<TracepointID> {
-
+   let matches = self.manifest.find_matches(group);
+   let mut result = HashSet::new();
 }
 ```
 
