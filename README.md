@@ -69,8 +69,8 @@ What I envisioned the new search strategy to be was: to follow what the hierarch
 2. Matches the problem groups to the search space and finds the closet matching critical paths.
 3. Enables trace points that divide the most problematic edge equally, based on the budget.
 
-### Pseudo Code
-```
+### Hierarchical Search Pseudo Code
+```rust
 fn hierarchical_search (problem_group, problem_edge, budget) -> Vec<TracepointID> {
     // Get source and target nodes of the problematic edge
     let (source, target) = problem_group.g.edge_endpoints(edge);
