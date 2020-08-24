@@ -210,7 +210,7 @@ file:///Users/sir/Desktop/projects/target/doc/pythia/search/flat/index.html
 ### Update Configuration Files
 1. Configuration file is ```/etc/pythia/controller.toml```
     * Change ```pythia_clients``` according to the actual number of nodes
-    * Change ```uber_trace_dir``` to where the uber trace is
+    * For tests with Openstack data, all the other fields, such as ```uber_trace_dir```, can be ignored.
 ### Creating Search Space
 **Manifest is synonym for search space.**
 1. May have to change to Emre's user to load the correct bashrc before running offline profiling, so run ```sudo su emreates``` 
