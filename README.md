@@ -271,4 +271,5 @@ file:///Users/sir/Desktop/projects/target/doc/pythia/search/flat/index.html
     * This will start pythia; if something goes, we will get back trace
 2. traces: /home/ates/tracing/traces
 
+nohup ./offline_profiling.sh > offline_profiling.out &
 
