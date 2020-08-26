@@ -91,7 +91,6 @@ fn hierarchical_search (problem_group, problem_edge, budget) -> Vec<TracepointID
            break;
         }
     }
-   println!("Common context for the search: {:?}", common_context);
    // Match the problem group to the search space and finds the closest matching critical paths
    let matches = self.manifest.find_matches(group);
 
@@ -157,9 +156,130 @@ fn search(&self, group: &Group, edge: EdgeIndex, budget: usize) -> Vec<Tracepoin
 ```
 ### Flat Search Pseudo Code
 ```rust
-fn search(&self, group: &Group, edge: EdgeIndex, budget: usize) -> Vec<TracepointID> {
+fn search(&group: &Group, edge: EdgeIndex, budget: usize) -> Vec<TracepointID> {
+   // Matches the problem groups to the search space
    let matches = self.manifest.find_matches(group);
    let mut result = HashSet::new();
+   // 
+   for m in matches {
+       // Each is cost 1
+       let remaining_budget = budget - result.len();
+       // take() makes the iterator finite
+       result.extend(
+           self.split_group_by_n(m, group, edge, remaining_budget)
+               .iter()
+               .take(remaining_budget),
+       );
+       result = result
+           .into_iter()
+           .filter(|&x| !self.controller.is_enabled(&(x, Some(group.request_type))))
+           .collect();
+   }
+   result.drain().collect()
+}
+
+/// Find n tracepoints that equally separate the edge according to the path
+///
+/// # Arguments
+/// * 'group' - a problematic group
+/// * 'path' - search space?
+/// * 'edge' - edge index of a problematic edge
+/// * 'n' - split by n trace points
+pub fn split_group_by_n(
+   path: &HierarchicalCriticalPath, // Contains full search space
+   group: &Group,
+   edge: EdgeIndex,
+   n: usize,
+) -> Vec<TracepointID> {
+   let mut result = Vec::new();
+   // source is the starting trace point and target is the end trace point
+   let (source, target) = group.g.edge_endpoints(edge).unwrap();
+   let mut path_source = path.start_node;
+   let path_target;
+   // counter
+   let mut nodes_between = 0;
+   let mut cur_path_idx = path.start_node;
+   let mut cur_group_idx = group.start_node;
+   loop {
+   /* Keep iterating the path (search space), until we find matching nodes in in the
+    * (problematic) group. Then iterate to the next node in the group.
+    * If node in path (search space) and node in (problematic) group are the same node
+    * Increment path
+    * Iterate to the next node in path
+    */
+       if path.g[cur_path_idx] == group.g[cur_group_idx] {
+           if cur_group_idx == source {
+               path_source = cur_path_idx;
+               nodes_between = 0;
+           }
+           // If we already reach at the target. Decrement counter by 1.
+           if cur_group_idx == target {
+               path_target = cur_path_idx;
+               nodes_between -= 1;
+               break;
+           }
+           // Only iterate the group index, if path and group are matched
+           cur_group_idx = group.next_node(cur_group_idx).unwrap();
+       }
+       // iterate to the next node in path
+       cur_path_idx = path.next_node(cur_path_idx).unwrap();
+       nodes_between += 1;
+   }
+   if nodes_between == 0 {
+       println!("The matching nodes are consecutive");
+   }
+   let mut gaps = Vec::new();
+   if nodes_between <= n {
+       for _ in 0..nodes_between {
+           gaps.push(0);
+       }
+   } else {
+       for _ in 0..n {
+           gaps.push(nodes_between / (n + 1));
+       }
+   }
+   cur_path_idx = path.next_node(path_source).unwrap();
+   for i in gaps {
+       for _ in 0..i {
+           cur_path_idx = path.next_node(cur_path_idx).unwrap();
+           if cur_path_idx == path_target {
+               eprintln!("Reached target prematurely");
+               break;
+           }
+       }
+       if self
+           .controller
+           .is_enabled(&(path.g[cur_path_idx].tracepoint_id, Some(path.request_type)))
+       {
+           match path.next_node(cur_path_idx) {
+               Some(nidx) => {
+                   cur_path_idx = nidx;
+                   if cur_path_idx == path_target {
+                       cur_path_idx = path.prev_node(cur_path_idx).unwrap();
+                       cur_path_idx = path.prev_node(cur_path_idx).unwrap();
+                   }
+               }
+               None => {
+                   cur_path_idx = path.prev_node(cur_path_idx).unwrap();
+               }
+           };
+           if cur_path_idx == path_source {
+               println!("Could not enabled nodes in between");
+               continue;
+           }
+       }
+       if cur_path_idx == path_target {
+           println!("Already reached target node, breaking");
+           continue;
+       }
+       result.push(path.g[cur_path_idx].tracepoint_id);
+       if cur_path_idx == path_target || cur_path_idx == path_source {
+           eprintln!("Some old assertions failed");
+           break;
+       }
+       cur_path_idx = path.next_node(cur_path_idx).unwrap();
+   }
+   result
 }
 ```
 
@@ -258,7 +378,7 @@ file:///Users/sir/Desktop/projects/target/doc/pythia/search/flat/index.html
     * Change ```pythia_clients``` according to the actual number of nodes
     * For tests with Openstack data, all the other fields, such as ```uber_trace_dir```, can be ignored.
 ### Creating Search Space
-**Manifest is synonym for search space.**
+**Manifest is synonym for search space**
 1. May have to change to Emre's user to load the correct bashrc before running offline profiling, so run ```sudo su emreates``` 
 1. Running some workload with all the instrumentation enabled: for OpenStack, this workload is in the script ```/local/tracing-pythia/workloads/offline_profiling.sh``` May need to manually pull the latest version of the code to get the script.
 2. This script generates a list of trace_ids in the file ~/offline_profiling.sh.
