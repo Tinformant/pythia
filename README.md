@@ -392,9 +392,9 @@ file:///Users/sir/Desktop/projects/target/doc/pythia/search/flat/index.html
     * This will start pythia; if something goes, we will get back trace
 2. traces: /home/ates/tracing/traces
 
-* nohup ./offline_profiling.sh > offline_profiling.out &
-* nohup cargo run manifest /users/emreates/offline_traces.txt > run_manifest.out &
-* nohup cargo run --bin pythia_controller search_output.out > search_stdout.out &
+* nohup ./offline_profiling.sh 2>&1 offline_profiling.out &
+* nohup cargo run manifest /users/emreates/offline_traces.txt 2>&1 run_manifest.out &
+* nohup cargo run --bin pythia_controller search_output.out 2>&1 temp.out &
 * nohup cargo run --bin pythia
 * scp SiR@ms0221.utah.cloudlab.us:/users/SiR/test.txt /Users/sir/Desktop/
 
