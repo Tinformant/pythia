@@ -395,6 +395,8 @@ file:///Users/sir/Desktop/projects/target/doc/pythia/search/flat/index.html
 * nohup ./offline_profiling.sh > offline_profiling.out &
 * nohup cargo run manifest /users/emreates/offline_traces.txt > run_manifest.out &
 * nohup cargo run --bin pythia_controller search_output.out > search_stdout.out &
+* nohup cargo run --bin pythia
+* scp SiR@ms0221.utah.cloudlab.us:/users/SiR/test.txt /Users/sir/Desktop/
 
 * Decide the stopping condition. This is done by changing the target points in the file src/bin/pythia_controller.rs.
 * Simply cargo run --bin pythia_controller /path/to/log/output. I typically keep the stdout/stderr and enable backtrace to have a more detailed view of things. So, this command could also be used: RUST_BACKTRACE=1 cargo run --bin pythia_controller /path/to/log/output 2>&1 | tee /path/to/verbose/logs
