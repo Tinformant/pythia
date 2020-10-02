@@ -38,7 +38,8 @@ tracepoint_id
 emreates/usr/lib/python3/dist-packages/cliff/app.py:363:openstackclient.shell.App.run_subcommand
 ```
 ### offline_traces.txt
-offline_traces.txt is a collection of all traces. Each line in this file has a corresponding .dot file
+* offline_traces.txt is a collection of all traces. Each line in this file has a corresponding .dot file
+* Each line is like: bd0ce9ef801df6ab9edbd12d57d77bdd5e12aed46383d88cceb2ef0b0fb59a4e
 
 ### manifest.json
 manifest.json is summary of search space
