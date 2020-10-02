@@ -10,11 +10,12 @@ manifest.json structure
           "nodes":{
             "tracepoint_id":"emreates/usr/lib/python3/dist-packages/cliff/app.py:363:openstackclient.shell.App.run_subcommand",
             "variant":"Entry",
-            "key_value_pair":
+            "key_value_pair":{
               "host":{
                 "Str":"cp-1.sir-qv81184.tracing-pythia-pg0.utah.cloudlab.us"
               }
               "lock_queue":{}
+             }
           }
         }
       }
