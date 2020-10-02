@@ -1,9 +1,5 @@
 ## Toy Search Space
-manifest
-tracepoint_id
-```
-emreates/usr/lib/python3/dist-packages/cliff/app.py:363:openstackclient.shell.App.run_subcommand
-```
+### manifest
 manifest.json structure
 ```json
 "per_request_type":{
@@ -24,15 +20,22 @@ manifest.json structure
       }
     }
     "occurances": {
-    "83ed0ae8bf2b98be3da672eac449ef67f11c27600befd433063e773af5217b4d":
+      "83ed0ae8bf2b98be3da672eac449ef67f11c27600befd433063e773af5217b4d":
     },
-    "added_pahts
-    "entry_points"
-    "synchronization_points"
-    "request_type_tracepoints":
+    "added_pahts":19,
+    "entry_points":{
+      "nova/usr/local/lib/python3.6/dist-packages/nova/scheduler/manager.py:205:nova.scheduler.manager.SchedulerManager.delete_instance_info"
+    }
+    "synchronization_points":{},
+    "request_type_tracepoints":{
+      "emreates/usr/local/lib/python3.6/dist-packages/openstackclient/compute/v2/server.py:662:openstackclient.compute.v2.server.CreateServer.take_action"
+    }
 }
 ```
-
+tracepoint_id
+```
+emreates/usr/lib/python3/dist-packages/cliff/app.py:363:openstackclient.shell.App.run_subcommand
+```
 ### offline_traces.txt
 offline_traces.txt is a collection of all traces. Each line in this file has a corresponding .dot file
 
