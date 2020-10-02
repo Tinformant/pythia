@@ -7,7 +7,7 @@ emreates/usr/lib/python3/dist-packages/cliff/app.py:363:openstackclient.shell.Ap
 manifest.json structure
 ```json
 "per_request_type":{
-  "ServerCreate":
+  "ServerCreate":{
     "paths": {
       "bd0ce9ef801df6ab9edbd12d57d77bdd5e12aed46383d88cceb2ef0b0fb59a4e": {
         "g":{
