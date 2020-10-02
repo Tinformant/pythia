@@ -21,7 +21,7 @@ manifest.json structure
       }
     }
     "occurances": {
-      "83ed0ae8bf2b98be3da672eac449ef67f11c27600befd433063e773af5217b4d":
+      "83ed0ae8bf2b98be3da672eac449ef67f11c27600befd433063e773af5217b4d":3
     },
     "added_pahts":19,
     "entry_points":{
