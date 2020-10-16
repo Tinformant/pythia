@@ -1,5 +1,8 @@
 # Pythia Hybrid Search
 ## Milestones
+### 10/15
+-[ ] Send psuedocodo to Raja (hybrid search)
+
 ### 08/20
 - [ ] Presentation
      - [X] The high-level problem search strategies intend to solve
